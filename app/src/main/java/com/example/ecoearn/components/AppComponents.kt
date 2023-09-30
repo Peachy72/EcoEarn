@@ -1,20 +1,34 @@
 package com.example.ecoearn.components
 
+import android.annotation.SuppressLint
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.CardGiftcard
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -23,6 +37,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -47,6 +62,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ecoearn.R
+import com.example.ecoearn.navigation.EcoEarnAppRouter
+import com.example.ecoearn.navigation.Screen
 import com.example.ecoearn.ui.theme.GrayColor
 import com.example.ecoearn.ui.theme.Primary
 import com.example.ecoearn.ui.theme.Secondary
@@ -101,6 +118,28 @@ fun HeadingTextComponent(value: String) {
         color = TextColor,
         textAlign = TextAlign.Center
     )
+}
+
+@Composable
+fun ClickableTextComponentWithIcon(value: String, imageVector: ImageVector) {
+    Box(contentAlignment = Alignment.Center) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = imageVector,
+                contentDescription = null,
+                modifier = Modifier.size(18.dp)
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Text(
+                text = value,
+                fontSize = 18.sp
+            )
+        }
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -265,9 +304,11 @@ fun ClickableTextComponent(value: String, onTextSelected: (String) -> Unit) {
 }
 
 @Composable
-fun ButtonComponent(value: String, onButtonClicked: () -> Unit, isEnabled: Boolean = false) {
+fun ButtonComponent(value: String, isEnabled: Boolean = false, screen: Screen) {
     Button(
-        onClick = onButtonClicked,
+        onClick = {
+            EcoEarnAppRouter.navigateTo(screen)
+        },
         modifier = Modifier
             .fillMaxWidth()
             .heightIn(48.dp),
@@ -398,7 +439,81 @@ fun ClickableForgotPasswordTextComponent(onTextSelected: (String) -> Unit) {
     )
 }
 
+@Composable
+fun ProfileComponent() {
+    Box(
+        modifier = Modifier
+            .height(300.dp)
+            .background(Primary)
+            .fillMaxWidth(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Icon(
+                imageVector = Icons.Default.AccountCircle,
+                contentDescription = "Profile Picture",
+                modifier = Modifier.size(150.dp)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Name",
+                fontSize = 24.sp
+            )
+        }
+    }
+}
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BottomBarComponent() {
+    Scaffold(
+        bottomBar = {
+            BottomAppBar(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Spacer(modifier = Modifier.width(1.dp))
+                    Icon(
+                        imageVector = Icons.Filled.Home,
+                        contentDescription = "Home",
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Icon(
+                        imageVector = Icons.Filled.Search,
+                        contentDescription = "Search",
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Icon(
+                        imageVector = Icons.Filled.CardGiftcard,
+                        contentDescription = "Gift",
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = "Profile",
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(modifier = Modifier.width(1.dp))
+                }
+            }
+        }
+    ) {
+
+    }
+}
 
 
 

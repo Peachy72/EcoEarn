@@ -7,11 +7,12 @@ sealed class Screen() {
     object WelcomeScreen : Screen()
     object SignUpScreen : Screen()
     object LoginScreen : Screen()
+    object ProfileScreen: Screen()
     object TermsAndConditionsScreen : Screen()
 }
 
 object EcoEarnAppRouter {
-    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.SignUpScreen)
+    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.WelcomeScreen)
 
     fun navigateTo(destination: Screen) {
         currentScreen.value = destination

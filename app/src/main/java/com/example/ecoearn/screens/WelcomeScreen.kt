@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +28,7 @@ import com.example.ecoearn.components.GreetingTextComponent
 import com.example.ecoearn.components.HeadingTextComponent
 import com.example.ecoearn.navigation.EcoEarnAppRouter
 import com.example.ecoearn.navigation.Screen
+import com.example.ecoearn.ui.theme.Primary
 import com.example.ecoearn.ui.theme.TextColor
 import java.time.format.TextStyle
 
@@ -62,11 +65,29 @@ fun WelcomeScreen() {
             GreetingTextComponent(value = "with your nearest vendors")
             GreetingTextComponent(value = "based on your location")
             Spacer(modifier = Modifier.height(20.dp))
-            ButtonComponent(
-                value = stringResource(id = R.string.get_started),
-                onButtonClicked = {
+            Button(
+                onClick = {
                     EcoEarnAppRouter.navigateTo(Screen.SignUpScreen)
-                })
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                colors = ButtonDefaults.buttonColors(Primary)
+            ) {
+                Text(
+                    text = "Get Started",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(),
+                    style = androidx.compose.ui.text.TextStyle(
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontStyle = FontStyle.Normal
+                    ),
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
     }
 }

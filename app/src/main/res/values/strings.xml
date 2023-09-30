@@ -17,4 +17,10 @@
     <string name="get_started">Get Started</string>
     <string name="phone_number">Contact Number +91</string>
     <string name="current_location">Current Location</string>
+    <string name="account">Account</string>
+    <string name="settings">Settings</string>
+    <string name="points">Points</string>
+    <string name="history">Gift Exchange History</string>
+    <string name="support">Support</string>
+    <string name="contact_vendor">Contact Vendor</string>
 </resources>
