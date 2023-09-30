@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AddLocation
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -31,6 +33,7 @@ import com.example.ecoearn.components.NormalTextComponent
 import com.example.ecoearn.components.PasswordTextFieldComponent
 import com.example.ecoearn.navigation.EcoEarnAppRouter
 import com.example.ecoearn.navigation.Screen
+import com.example.ecoearn.ui.theme.Secondary
 
 
 @Composable
@@ -41,25 +44,30 @@ fun SignUpScreen() {
         modifier = Modifier
             .fillMaxSize()
             .padding(28.dp)
-            .background(Color.White)
+            .background(Secondary)
     ) {
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
         ) {
-            NormalTextComponent(value = stringResource(id = R.string.hello))
+            Spacer(modifier = Modifier.height(80.dp))
             HeadingTextComponent(value = stringResource(id = R.string.create_account))
             Spacer(modifier = Modifier.height(20.dp))
             MyTextFieldComponent(
-                labelValue = stringResource(id = R.string.first_name),
-                imageVector = Icons.Filled.Person,
-            )
-            MyTextFieldComponent(
-                labelValue = stringResource(id = R.string.last_name),
+                labelValue = stringResource(id = R.string.full_name),
                 imageVector = Icons.Filled.Person,
             )
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.email),
                 imageVector = Icons.Filled.Email,
+            )
+            MyTextFieldComponent(
+                labelValue = stringResource(id = R.string.phone_number),
+                imageVector = Icons.Filled.Phone,
+            )
+            MyTextFieldComponent(
+                labelValue = stringResource(id = R.string.current_location),
+                imageVector = Icons.Filled.AddLocation,
             )
             PasswordTextFieldComponent(
                 labelValue = stringResource(id = R.string.password),
@@ -72,7 +80,13 @@ fun SignUpScreen() {
                 }
             )
             Spacer(modifier = Modifier.height(80.dp))
-            ButtonComponent(value = stringResource(id = R.string.register))
+            ButtonComponent(
+                value = stringResource(id = R.string.register),
+                onButtonClicked = {
+//                    { TODO: Do sth }
+                },
+                isEnabled = true,
+            )
             DividerTextComponent()
             ClickableLoginTextComponent(
                 onTextSelected = {

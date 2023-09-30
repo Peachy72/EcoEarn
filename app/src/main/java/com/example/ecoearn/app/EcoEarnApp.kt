@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.ecoearn.navigation.EcoEarnAppRouter
 import com.example.ecoearn.navigation.Screen
+import com.example.ecoearn.screens.WelcomeScreen
 import com.example.ecoearn.screens.SignUpScreen
 import com.example.ecoearn.screens.LoginScreen
 import com.example.ecoearn.screens.TermsAndConditionsScreen
@@ -20,6 +21,7 @@ fun EcoEarnApp() {
     ) {
         Crossfade(targetState = EcoEarnAppRouter.currentScreen, label = "") { currentState ->
             when (currentState.value) {
+                is Screen.WelcomeScreen -> WelcomeScreen()
                 is Screen.SignUpScreen -> SignUpScreen()
                 is Screen.LoginScreen -> LoginScreen()
                 is Screen.TermsAndConditionsScreen -> TermsAndConditionsScreen()

@@ -44,9 +44,9 @@ fun LoginScreen() {
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            NormalTextComponent(value = stringResource(id = R.string.hello))
+            Spacer(modifier = Modifier.height(80.dp))
             HeadingTextComponent(value = stringResource(id = R.string.welcome))
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(250.dp))
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.email),
                 imageVector = Icons.Filled.Email,
@@ -61,8 +61,15 @@ fun LoginScreen() {
                     // TODO:Navigate to Forgot Password Screen
                 }
             )
-            Spacer(modifier = Modifier.height(80.dp))
-            ButtonComponent(value = stringResource(id = R.string.login))
+            Spacer(modifier = Modifier.height(40.dp))
+            ButtonComponent(
+                value = stringResource(id = R.string.login),
+                onButtonClicked = {
+
+//                    TODO: Do sth
+                },
+                isEnabled = true,
+            )
             DividerTextComponent()
             ClickableLoginTextComponent(
                 tryingToLogin = false,

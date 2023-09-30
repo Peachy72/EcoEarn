@@ -52,6 +52,22 @@ import com.example.ecoearn.ui.theme.Primary
 import com.example.ecoearn.ui.theme.Secondary
 import com.example.ecoearn.ui.theme.TextColor
 
+@Composable
+fun GreetingTextComponent(value: String) {
+    Text(
+        text = value,
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(),
+        style = TextStyle(
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Normal,
+            fontStyle = FontStyle.Normal
+        ),
+        color = TextColor,
+        textAlign = TextAlign.Center
+    )
+}
 
 @Composable
 fun NormalTextComponent(value: String) {
@@ -78,7 +94,7 @@ fun HeadingTextComponent(value: String) {
             .fillMaxWidth()
             .heightIn(),
         style = TextStyle(
-            fontSize = 30.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal
         ),
@@ -249,14 +265,15 @@ fun ClickableTextComponent(value: String, onTextSelected: (String) -> Unit) {
 }
 
 @Composable
-fun ButtonComponent(value: String) {
+fun ButtonComponent(value: String, onButtonClicked: () -> Unit, isEnabled: Boolean = false) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onButtonClicked,
         modifier = Modifier
             .fillMaxWidth()
             .heightIn(48.dp),
         contentPadding = PaddingValues(),
         colors = ButtonDefaults.buttonColors(Color.Transparent),
+        enabled = isEnabled
     ) {
         Box(
             modifier = Modifier
