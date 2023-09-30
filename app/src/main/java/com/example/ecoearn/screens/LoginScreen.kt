@@ -23,7 +23,6 @@ import com.example.ecoearn.components.ButtonComponent
 import com.example.ecoearn.components.CheckboxComponent
 import com.example.ecoearn.components.ClickableForgotPasswordTextComponent
 import com.example.ecoearn.components.ClickableLoginTextComponent
-import com.example.ecoearn.components.ClickableSignUpTextComponent
 import com.example.ecoearn.components.ClickableTextComponent
 import com.example.ecoearn.components.DividerTextComponent
 import com.example.ecoearn.components.HeadingTextComponent
