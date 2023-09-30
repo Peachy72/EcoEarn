@@ -14,7 +14,7 @@ sealed class Screen() {
 }
 
 object EcoEarnAppRouter {
-    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.VoucherScreen)
+    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.WelcomeScreen)
 
     fun navigateTo(destination: Screen) {
         currentScreen.value = destination

@@ -1,6 +1,8 @@
 package com.example.ecoearn.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,8 +15,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -39,12 +43,19 @@ fun WelcomeScreen() {
         modifier = Modifier
             .fillMaxSize()
             .padding(28.dp)
-            .background(Color.White)
+            .background(Color.White),
     ) {
         Column {
             Spacer(modifier = Modifier.height(100.dp))
             HeadingTextComponent(value = stringResource(id = R.string.app_name))
-            Spacer(modifier = Modifier.height(200.dp))
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Logo",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp),
+                alignment = Alignment.Center
+            )
             Text(
                 text = "Manage your waste effectively",
                 modifier = Modifier

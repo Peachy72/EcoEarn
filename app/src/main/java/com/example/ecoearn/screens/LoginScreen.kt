@@ -1,5 +1,6 @@
 package com.example.ecoearn.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,8 +19,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
@@ -57,7 +60,14 @@ fun LoginScreen() {
         ) {
             Spacer(modifier = Modifier.height(80.dp))
             HeadingTextComponent(value = stringResource(id = R.string.welcome))
-            Spacer(modifier = Modifier.height(250.dp))
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Logo",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp),
+                alignment = Alignment.Center
+            )
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.email),
                 imageVector = Icons.Filled.Email,

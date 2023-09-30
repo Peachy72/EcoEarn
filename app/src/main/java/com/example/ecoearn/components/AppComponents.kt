@@ -119,7 +119,7 @@ fun HeadingTextComponent(value: String) {
             .fillMaxWidth()
             .heightIn(),
         style = TextStyle(
-            fontSize = 18.sp,
+            fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal
         ),
@@ -475,53 +475,6 @@ fun ProfileComponent() {
     }
 }
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun BottomBarComponent() {
-    Scaffold(
-        bottomBar = {
-            BottomAppBar(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Spacer(modifier = Modifier.width(1.dp))
-                    Icon(
-                        imageVector = Icons.Filled.Home,
-                        contentDescription = "Home",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Icon(
-                        imageVector = Icons.Filled.Search,
-                        contentDescription = "Search",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Icon(
-                        imageVector = Icons.Filled.CardGiftcard,
-                        contentDescription = "Gift",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Person,
-                        contentDescription = "Profile",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Spacer(modifier = Modifier.width(1.dp))
-                }
-            }
-        }
-    ) {
-
-    }
-}
 
 @Composable
 fun CardComponent(image: Int, title: String, onClick: () -> Unit) {
