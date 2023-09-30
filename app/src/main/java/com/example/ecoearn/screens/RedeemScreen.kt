@@ -39,6 +39,8 @@ import com.example.ecoearn.R
 import com.example.ecoearn.components.BottomBarComponent
 import com.example.ecoearn.components.CardComponent
 import com.example.ecoearn.components.SeeMoreComponent
+import com.example.ecoearn.navigation.EcoEarnAppRouter
+import com.example.ecoearn.navigation.Screen
 import com.example.ecoearn.ui.theme.Primary
 
 
@@ -66,13 +68,17 @@ fun RedeemScreen() {
                 CardComponent(
                     image = R.drawable.nestle,
                     title = "Gifts",
-                    onClick = {}
+                    onClick = {
+                        EcoEarnAppRouter.navigateTo(Screen.VoucherScreen)
+                    }
                 )
                 Spacer(modifier = Modifier.width(20.dp))
                 CardComponent(
                     image = R.drawable.nestle,
                     title = "Gifts",
-                    onClick = {}
+                    onClick = {
+                        EcoEarnAppRouter.navigateTo(Screen.VoucherScreen)
+                    }
                 )
             }
             Spacer(modifier = Modifier.height(20.dp))

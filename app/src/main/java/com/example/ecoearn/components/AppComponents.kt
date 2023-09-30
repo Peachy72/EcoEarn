@@ -568,6 +568,70 @@ fun SeeMoreComponent(onClick: () -> Unit) {
     }
 }
 
+@Composable
+fun PointsComponent(points: Int) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                end = 8.dp,
+                top = 8.dp,
+            )
+            .background(GrayColor),
+        contentAlignment = Alignment.TopEnd
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Image(
+                imageVector = Icons.Default.CardGiftcard,
+                contentDescription = null,
+                modifier = Modifier.size(20.dp),
+                colorFilter = ColorFilter.tint(Primary),
+            )
+            Spacer(modifier = Modifier.width(5.dp))
+            Text(
+                text = "$points Points",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                color = Primary
+            )
+        }
+    }
+}
+
+@Composable
+fun VoucherDescriptionComponent() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        Text(
+            //TODO: change text
+            text = "Voucher Description",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = TextColor
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            //TODO: change text
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Normal,
+            color = TextColor
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        ButtonComponent(
+            value = stringResource(id = R.string.redeem),
+            isEnabled = true,
+            screen = Screen.RedeemScreen //TODO: change screen navigation
+        )
+    }
+}
+
+
 
 
 
