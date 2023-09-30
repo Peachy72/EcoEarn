@@ -3,12 +3,15 @@ package com.example.ecoearn.components
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -21,6 +24,8 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.ArrowForwardIos
 import androidx.compose.material.icons.filled.CardGiftcard
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
@@ -31,6 +36,7 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -47,7 +53,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -514,6 +522,54 @@ fun BottomBarComponent() {
 
     }
 }
+
+@Composable
+fun CardComponent(image: Int, title: String, onClick: () -> Unit) {
+    Card(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .border(3.dp, Primary, RoundedCornerShape(8.dp)),
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Image(
+            painter =  painterResource(id = image),
+            contentDescription = title,
+            modifier = Modifier
+                .height(150.dp)
+                .width(150.dp),
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Composable
+fun SeeMoreComponent(onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(end = 32.dp)
+            .background(GrayColor),
+        contentAlignment = Alignment.CenterEnd
+    ) {
+        Row {
+            Text(
+                text = stringResource(id = R.string.see_more),
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = Primary,
+                modifier = Modifier.clickable(onClick = onClick)
+            )
+            Image(
+                imageVector = Icons.Filled.ArrowForward,
+                contentDescription = stringResource(id = R.string.see_more),
+                colorFilter = ColorFilter.tint(Primary),
+            )
+        }
+    }
+}
+
+
+
 
 
 
