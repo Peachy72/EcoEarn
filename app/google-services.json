@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "381020459083",
+    "project_id": "ecoearn-67142",
+    "storage_bucket": "ecoearn-67142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381020459083:android:cd304f8fb6a5992be03dce",
+        "android_client_info": {
+          "package_name": "com.example.ecoearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAc7dFjCM6CEQ14_I6FXQg59kMG2YqnRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
