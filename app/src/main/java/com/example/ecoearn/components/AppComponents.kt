@@ -308,47 +308,9 @@ fun DividerTextComponent() {
 }
 
 @Composable
-fun ClickableLoginTextComponent(onTextSelected: (String) -> Unit) {
-    val initialText = "Already have an account? "
-    val loginText = stringResource(id = R.string.login)
-
-    val annotatedString = buildAnnotatedString {
-        append(initialText)
-        withStyle(style = SpanStyle(color = Primary)){
-            pushStringAnnotation(
-                tag = loginText,
-                annotation = loginText
-            )
-            append(loginText)
-        }
-    }
-
-    ClickableText(
-        modifier = Modifier
-            .fillMaxWidth()
-            .heightIn(min = 40.dp),
-        style = TextStyle(
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Normal,
-            fontStyle = FontStyle.Normal,
-            textAlign = TextAlign.Center
-        ),
-        text = annotatedString,
-        onClick ={offset ->
-            annotatedString.getStringAnnotations(offset,offset)
-                .firstOrNull()?.also { span->
-                    if(span.item == loginText) {
-                        onTextSelected(span.item)
-                    }
-                }
-        },
-    )
-}
-
-@Composable
-fun ClickableSignUpTextComponent(onTextSelected: (String) -> Unit) {
-    val initialText = "Don't have an account? "
-    val loginText = stringResource(id = R.string.register)
+fun ClickableLoginTextComponent(tryingToLogin:Boolean = true, onTextSelected: (String) -> Unit) {
+    val initialText = if(tryingToLogin) "Already have an account? " else "Don't have an account? "
+    val loginText = if(tryingToLogin) stringResource(id = R.string.login) else stringResource(id = R.string.register)
 
     val annotatedString = buildAnnotatedString {
         append(initialText)

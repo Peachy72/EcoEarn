@@ -65,7 +65,8 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(80.dp))
             ButtonComponent(value = stringResource(id = R.string.login))
             DividerTextComponent()
-            ClickableSignUpTextComponent(
+            ClickableLoginTextComponent(
+                tryingToLogin = false,
                 onTextSelected = {
                     EcoEarnAppRouter.navigateTo(Screen.SignUpScreen)
                 }
