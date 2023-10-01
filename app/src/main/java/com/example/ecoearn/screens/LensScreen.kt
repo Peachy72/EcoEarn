@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddAPhoto
 import androidx.compose.material.icons.filled.CameraAlt
@@ -39,7 +40,7 @@ fun LensScreen() {
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.height(100.dp))
+        Spacer(modifier = Modifier.height(200.dp))
         Image (
             imageVector = Icons.Filled.CameraAlt,
             contentDescription = null,
@@ -50,7 +51,7 @@ fun LensScreen() {
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(300.dp)
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(Primary)
         ) {
@@ -72,7 +73,7 @@ fun LensScreen() {
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(300.dp)
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(Primary)
         ) {

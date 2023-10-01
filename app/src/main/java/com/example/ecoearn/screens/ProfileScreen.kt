@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.AppSettingsAlt
@@ -20,6 +21,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -73,7 +75,8 @@ fun ProfileScreen() {
             Button(
                 onClick = { /*TODO*/ },
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .width(300.dp)
+                    .align(CenterHorizontally)
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(Primary)
             ) {

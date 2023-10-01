@@ -69,7 +69,7 @@ fun RedeemScreen() {
                     image = R.drawable.nestle,
                     title = "Gifts",
                     onClick = {
-                        EcoEarnAppRouter.navigateTo(Screen.VoucherScreen)
+                        EcoEarnAppRouter.navigateTo(Screen.CashOutScreen)
                     }
                 )
                 Spacer(modifier = Modifier.width(20.dp))

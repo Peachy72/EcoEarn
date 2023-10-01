@@ -589,7 +589,7 @@ fun VoucherDescriptionComponent() {
             colors = ButtonDefaults.buttonColors(Primary)
         ) {
             Text(
-                text = stringResource(id = R.string.contact_vendor),
+                text = stringResource(id = R.string.redeem),
                 modifier = Modifier
                     .fillMaxWidth()
                     .heightIn(),
