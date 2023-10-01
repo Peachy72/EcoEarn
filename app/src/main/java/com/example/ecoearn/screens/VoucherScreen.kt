@@ -20,6 +20,9 @@ import androidx.compose.ui.unit.dp
 import com.example.ecoearn.R
 import com.example.ecoearn.components.PointsComponent
 import com.example.ecoearn.components.VoucherDescriptionComponent
+import com.example.ecoearn.navigation.EcoEarnAppRouter
+import com.example.ecoearn.navigation.Screen
+import com.example.ecoearn.navigation.SystemBackButtonHandler
 import com.example.ecoearn.ui.theme.Primary
 
 @Composable
@@ -36,6 +39,9 @@ fun VoucherScreen() {
 
         }
         VoucherDescriptionComponent()
+    }
+    SystemBackButtonHandler {
+        EcoEarnAppRouter.navigateTo(Screen.RedeemScreen)
     }
 
 }
