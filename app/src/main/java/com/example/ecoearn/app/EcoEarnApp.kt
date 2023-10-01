@@ -16,6 +16,7 @@ import com.example.ecoearn.screens.ProfileScreen
 import com.example.ecoearn.screens.RedeemScreen
 import com.example.ecoearn.screens.VoucherScreen
 import com.example.ecoearn.screens.CashOutScreen
+import com.example.ecoearn.screens.LensScreen
 
 @Composable
 fun EcoEarnApp() {
@@ -33,6 +34,7 @@ fun EcoEarnApp() {
                 is Screen.RedeemScreen -> RedeemScreen()
                 is Screen.VoucherScreen -> VoucherScreen()
                 is Screen.CashOutScreen -> CashOutScreen()
+                is Screen.LensScreen -> LensScreen()
 
                 else -> {}
             }

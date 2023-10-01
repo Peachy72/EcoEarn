@@ -30,4 +30,6 @@
     <string name="card_number">Card Number</string>
     <string name="bank_name">Bank Name</string>
     <string name="cash_out_amount">Cash Out Amount</string>
+    <string name="waste_sorting">Waste Sorting</string>
+    <string name="qr_code">QR</string>
 </resources>
