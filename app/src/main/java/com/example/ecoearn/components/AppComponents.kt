@@ -27,6 +27,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBalance
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.AddCard
+import androidx.compose.material.icons.filled.AddLocation
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.ArrowForwardIos
 import androidx.compose.material.icons.filled.CardGiftcard
@@ -632,9 +633,56 @@ modifier = Modifier
             labelValue = stringResource(id = R.string.cash_out_amount),
             imageVector = Icons.Filled.Money,
         )
-
     }
+}
 
+@Composable
+fun LocationCardComponent(distance: Int, locationLable: String) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                imageVector = Icons.Filled.AddLocation,
+                contentDescription = null,
+                modifier = Modifier.size(20.dp),
+                colorFilter = ColorFilter.tint(Primary),
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
+            ) {
+                Text(
+                    text = "$distance km",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Primary
+                )
+                Text(
+                    text = locationLable,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = TextColor
+                )
+            }
+            Image(
+                imageVector = Icons.Filled.ArrowForwardIos,
+                contentDescription = null,
+                modifier = Modifier.size(20.dp),
+                colorFilter = ColorFilter.tint(Primary),
+            )
+        }
+    }
 }
 
 
