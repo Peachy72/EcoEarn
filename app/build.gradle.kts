@@ -75,4 +75,5 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
 
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 }
