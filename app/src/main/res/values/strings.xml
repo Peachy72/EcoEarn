@@ -26,4 +26,8 @@
     <string name="see_more">See more</string>
     <string name="banner">Banner</string>
     <string name="redeem">Redeem</string>
+    <string name="cash_out">Cash Out</string>
+    <string name="card_number">Card Number</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="cash_out_amount">Cash Out Amount</string>
 </resources>

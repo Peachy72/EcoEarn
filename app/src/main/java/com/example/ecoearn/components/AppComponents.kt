@@ -19,15 +19,19 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBalance
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.AddCard
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.ArrowForwardIos
 import androidx.compose.material.icons.filled.CardGiftcard
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Money
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Visibility
@@ -576,12 +580,61 @@ fun VoucherDescriptionComponent() {
             color = TextColor
         )
         Spacer(modifier = Modifier.height(16.dp))
-        ButtonComponent(
-            value = stringResource(id = R.string.redeem),
-            isEnabled = true,
-            screen = Screen.RedeemScreen //TODO: change screen navigation
-        )
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(Primary)
+        ) {
+            Text(
+                text = stringResource(id = R.string.contact_vendor),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(),
+                style = TextStyle(
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    fontStyle = FontStyle.Normal
+                ),
+                color = Color.White,
+                textAlign = TextAlign.Center
+            )
+        }
     }
+}
+
+@Composable
+fun CashOutComponent() {
+    Column(
+modifier = Modifier
+    .fillMaxWidth()
+    .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = stringResource(id = R.string.cash_out),
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Primary,
+            modifier = Modifier
+                .padding(16.dp)
+        )
+        MyTextFieldComponent(
+            labelValue = stringResource(id = R.string.card_number),
+            imageVector = Icons.Filled.AddCard,
+        )
+        MyTextFieldComponent(
+            labelValue = stringResource(id = R.string.bank_name),
+            imageVector = Icons.Filled.AccountBalance,
+        )
+        MyTextFieldComponent(
+            labelValue = stringResource(id = R.string.cash_out_amount),
+            imageVector = Icons.Filled.Money,
+        )
+
+    }
+
 }
 
 

@@ -11,10 +11,11 @@ sealed class Screen() {
     object TermsAndConditionsScreen : Screen()
     object RedeemScreen : Screen()
     object VoucherScreen : Screen()
+    object CashOutScreen : Screen()
 }
 
 object EcoEarnAppRouter {
-    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.WelcomeScreen)
+    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.CashOutScreen)
 
     fun navigateTo(destination: Screen) {
         currentScreen.value = destination
