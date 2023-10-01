@@ -62,8 +62,8 @@ fun BottomBarComponent() {
                         modifier = Modifier
                             .size(24.dp)
                             .clickable {
-//                                EcoEarnAppRouter.navigateTo(
-//                                    destination = Screen.LocationScreen)
+                                EcoEarnAppRouter.navigateTo(
+                                    destination = Screen.LocationScreen)
                             }
                     )
                     Icon(
@@ -72,8 +72,8 @@ fun BottomBarComponent() {
                         modifier = Modifier
                             .size(24.dp)
                             .clickable(onClick = {
-//                                EcoEarnAppRouter.navigateTo(
-//                                    destination = Screen.HomeScreen)
+                                EcoEarnAppRouter.navigateTo(
+                                    destination = Screen.HomeScreen)
                             })
                     )
                     Icon(
