@@ -32,4 +32,5 @@
     <string name="cash_out_amount">Cash Out Amount</string>
     <string name="waste_sorting">Waste Sorting</string>
     <string name="qr_code">QR</string>
+    <string name="next_page">Next Page</string>
 </resources>
